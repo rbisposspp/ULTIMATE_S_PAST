@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Past Drill - Presentation Mode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+    <header class="app-header">
+        <h1>Simple Past Drill</h1>
+        <p>Master the Simple Past with Regular & Irregular Verbs</p>
+    </header>
+
+    <main class="drill-container">
+        <div id="settings-area" class="settings-area">
+            <div class="setting-group">
+                <label for="level-select">Level:</label>
+                <select id="level-select">
+                    <option value="1" selected>Level 1: Affirmative Sentences</option>
+                    <option value="2">Level 2: Negative Sentences</option>
+                    <option value="3">Level 3: Interrogative Sentences</option>
+                    <option value="4">Level 4: Mixed Review</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <label for="drillModeSelect">Drill Mode:</label>
+                <select id="drillModeSelect">
+                    <option value="substitution" selected>Substitution</option>
+                    <option value="transformation">Transformation</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <label for="voiceSelect">Model Voice:</label>
+                <select id="voiceSelect">
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+            </div>
+            <div class="setting-group">
+                <label for="speedControl">Speed:</label>
+                <input type="range" id="speedControl" min="0.5" max="1.5" value="1" step="0.1">
+                <span id="speedValue">1.0x</span>
+            </div>
+        </div>
+
+        <div class="drill-interface">
+            <div id="status-area" class="status-area">
+                <span id="round-indicator">Press "Start Drill" to begin.</span>
+                 <div id="score-area" class="score-area">
+                    Score: <span id="score-value">0</span> | Streak: <span id="streak-value">0</span>
+                </div>
+            </div>
+
+            <div id="prompts-container" class="prompts-container">
+                <span id="prompt-subject" class="prompt"></span>
+                <span id="prompt-verb" class="prompt"></span>
+                <span id="prompt-complement" class="prompt"></span>
+                <span id="prompt-type" class="prompt type-prompt"></span>
+            </div>
+
+            <div id="feedback-area" class="feedback-area">
+                <div id="correct-answer-display" class="correct-answer"></div>
+            </div>
+
+            <div class="controls-container">
+                <button id="start-button" class="btn btn-primary">Start Drill</button>
+                <button id="next-round-button" class="btn btn-primary" style="display: none;">Next Round</button>
+                <button id="listen-model-button" class="btn btn-secondary" disabled>Listen to Model</button>
+            </div>
+            
+            <p id="error-message" class="error-message"></p>
+        </div>
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
